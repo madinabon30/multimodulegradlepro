@@ -1,0 +1,31 @@
+
+ext.libs = [
+        'lombok' : 'org.projectlombok:lombok:1.18.16',
+        'guava' : 'com.google.guava:guava:31.0.1-jre',
+        'dataJdbc' : 'org.springframework.boot:spring-boot-starter-data-jdbc'
+]
+
+ext.libsTest = [
+        'jupiterApi' : 'org.junit.jupiter:junit-jupiter-api:5.6.0',
+        'jupiterEngine' : 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
+]
+
+ext.observability = [
+        'aop'  : 'org.springframework.boot:spring-boot-starter-aop',
+        'regOtlp' : 'io.micrometer:micrometer-registry-otlp',
+        'prometheus'  : 'io.micrometer:micrometer-registry-prometheus',
+        'bridgeOtel'  : 'io.micrometer:micrometer-tracing-bridge-otel',
+        'otApi'  : 'io.opentelemetry:opentelemetry-api:1.29.0',
+        'otContext'  : 'io.opentelemetry:opentelemetry-context:1.29.0',
+        'otSdk'  : 'io.opentelemetry:opentelemetry-sdk:1.29.0',
+        'otSdkTrace'  : 'io.opentelemetry:opentelemetry-sdk-trace:1.29.0',
+        'otSdkMetrics'  : 'io.opentelemetry:opentelemetry-sdk-metrics:1.29.0',
+        'otSdkCommon'  : 'io.opentelemetry:opentelemetry-sdk-common:1.29.0',
+        'otSdkConfSpi'  : 'io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.29.0',
+        'propagator'  : 'io.opentelemetry:opentelemetry-extension-trace-propagators:1.29.0',
+        'expCommon'  : 'io.opentelemetry:opentelemetry-exporter-common:1.29.0',
+        'expOtlp'  : 'io.opentelemetry:opentelemetry-exporter-otlp:1.29.0',
+        'expOtlpCommon'  : 'io.opentelemetry:opentelemetry-exporter-otlp-common:1.29.0',
+        'semconv'  : 'io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-semconv:1.29.0-alpha',
+        'otLogAppender'  : 'io.opentelemetry.instrumentation:opentelemetry-logback-appender-1.0:1.29.0-alpha'
+]

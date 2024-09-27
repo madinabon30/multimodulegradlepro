@@ -1,0 +1,72 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'org.springframework.boot' version '3.1.2'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+}
+
+allprojects {
+
+    apply from: "$rootProject.projectDir/dependencies.gradle"
+
+    group 'org.shirinkulovam'
+    version '1.0'
+
+    java.sourceCompatibility(JavaVersion.VERSION_19)
+
+    configurations {
+        compileOnly.extendsFrom annotationProcessor
+        testCompileOnly.extendsFrom annotationProcessor
+        testAnnotationProcessor.extendsFrom annotationProcessor
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+//        implementation "com.google.guava:guava:31.0.1-jre"
+
+        implementation observability.aop
+        implementation observability.regOtlp
+        implementation observability.prometheus
+        implementation observability.bridgeOtel
+        implementation observability.otApi
+        implementation observability.otContext
+        implementation observability.otSdk
+        implementation observability.otSdkTrace
+        implementation observability.otSdkMetrics
+        implementation observability.otSdkCommon
+        implementation observability.otSdkConfSpi
+        implementation observability.propagator
+        implementation observability.expCommon
+        implementation observability.expOtlp
+        implementation observability.expOtlpCommon
+        implementation observability.semconv
+        implementation observability.otLogAppender
+
+        testImplementation libsTest.jupiterApi
+        testImplementation libsTest.jupiterEngine
+
+        annotationProcessor "org.projectlombok:lombok:1.18.16"
+    }
+
+    test {
+        useJUnitPlatform()
+
+//        useJUnit() if you use JUnit 4
+    }
+
+    task('hello').doLast {
+        println "I'm $project.name"
+    }
+
+    tasks.withType(JavaCompile){
+        options.encoding = 'UTF-8'
+    }
+}
